@@ -4,9 +4,9 @@ body {
 }
 
 .navbar {
+  width: 125px; 
   background-color: #333;
   color: #fff;
-  padding: 20px;
 }
 
 .navbar ul {
@@ -16,13 +16,16 @@ body {
 }
 
 .navbar ul li {
-  margin-bottom: 10px;
+  padding: 10px 20px;
 }
 
 .navbar ul li a {
-  display: block;
   color: #fff;
   text-decoration: none;
+}
+
+.navbar ul li a:hover {
+  background-color: #555;
 }
 
 .content {
