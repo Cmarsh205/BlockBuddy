@@ -1,0 +1,45 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+.navbar {
+  background-color: #333;
+  color: #fff;
+  padding: 20px;
+}
+
+.navbar ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.navbar ul li {
+  margin-bottom: 10px;
+}
+
+.navbar ul li a {
+  display: block;
+  color: #fff;
+  text-decoration: none;
+}
+
+.content {
+  display: flex;
+}
+
+.box {
+  flex: 1;
+  padding: 20px;
+  background-color: #f0f0f0;
+  border: 1px solid #ccc;
+  margin: 10px;
+  text-align: center;
+}
+
+@media (max-width: 768px) {
+  .content {
+    flex-direction: column;
+  }
+}
