@@ -1,12 +1,23 @@
 body {
   margin: 0;
-  font-family: Arial, sans-serif;
+  font-family: Arial, sans-serif; 
+}
+
+.navbar-container {
+  background-color: #333;
+  color: #fff;
+  height: 100%; 
+}
+
+.navbar-title {
+  padding: 10px;
+  margin: 0;
+  text-align: center;
 }
 
 .navbar {
-  width: 125px; 
-  background-color: #333;
-  color: #fff;
+  height: calc(100% - 40px); 
+  overflow-y: auto; 
 }
 
 .navbar ul {
