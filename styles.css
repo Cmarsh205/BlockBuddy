@@ -12,7 +12,7 @@ body {
 .navbar-title {
   padding: 10px;
   margin: 0;
-  text-align: center;
+  text-align: left;
 }
 
 .navbar {
@@ -50,12 +50,18 @@ body {
 }
 
 .box {
-  flex: 1;
   padding: 20px;
   background-color: #f0f0f0;
   border: 1px solid #ccc;
   margin: 10px;
   text-align: center;
+}
+
+.flexbox {
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  flex-flow: column wrap;
 }
 
 @media (max-width: 768px) {
