@@ -3,22 +3,16 @@ body {
   font-family: Arial, sans-serif; 
 }
 
-.navbar-container {
-  background-color: #333;
-  color: #fff;
-  height: 100%; 
-}
-
 .navbar-title {
-  padding: 10px;
+  padding: 20px;
   margin: 0;
   text-align: left;
 }
 
 .navbar {
-  width: 170px; 
-  background-color: #333;
-  color: #fff;
+  width: 180px; 
+  background-color: #ffcc00;
+  color: #000000;
   height: 100vh; 
   position: fixed;
   top: 0;
@@ -37,21 +31,61 @@ body {
 }
 
 .navbar ul li a {
-  color: #fff;
+  color: #000000;
   text-decoration: none;
+  font-size: 18px;
 }
 
 .navbar ul li a:hover {
-  background-color: #555;
+  background-color: #ffbb00;
 }
 
-.box {
-  width: 50%;
+.box-f {
+  width: 100%;
+  height: 32%;
   padding: 20px;
-  background-color: #f0f0f0;
-  border: 1px solid #ccc;
+  background-color: #ffbeba;
+  border: 1px solid #868686;
   margin: 10px;
-  text-align: center;
+  border-radius: 15px;
+}
+
+.box-p {
+  width: 100%;
+  height: 32%;
+  padding: 20px;
+  background-color: #c8edfd;
+  border: 1px solid #868686;
+  margin: 10px;
+  border-radius: 15px;
+}
+
+.box-i {
+  width: 100%;
+  height: 32%;
+  padding: 20px;
+  background-color: #ffdcaa;
+  border: 1px solid #868686;
+  margin: 10px;
+  border-radius: 15px;
+}
+
+.box-w {
+  width: 100%;
+  height: 32%;
+  padding: 20px;
+  background-color: #c3f2cb;
+  border: 1px solid #868686;
+  margin: 10px;
+  border-radius: 15px;
+}
+
+h2 {
+  margin-top: 0px;
+}
+
+h1 {
+  font-size: 25px;
 }
 
 .content {
@@ -63,6 +97,19 @@ body {
 .flexbox {
   display: flex;
   justify-content: center;
+}
+
+.search-form {
+  margin-top: 10px;
+  padding: 0 15px;
+  margin-right: 18px;
+}
+
+.search-input {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #868686;
+  border-radius: 5px;
 }
 
 @media (max-width: 768px) {
