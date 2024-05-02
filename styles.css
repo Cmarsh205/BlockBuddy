@@ -17,7 +17,8 @@ body {
   position: fixed;
   top: 0;
   left: 0;
-  overflow-y: auto; 
+  overflow-y: auto;
+  z-index: 1; 
 }
 
 .navbar ul {
@@ -57,7 +58,7 @@ body {
 
 .box-f {
   height: 500px;
-  width: 500px;
+  width: 750px;
   background-color: #ffbeba;
   border: 1px solid #868686;
   margin: 10px;
@@ -66,7 +67,7 @@ body {
 
 .box-p {
   height: 500px;
-  width: 500px;
+  width: 400px;
   background-color: #c8edfd;
   border: 1px solid #868686;
   margin: 10px;
@@ -92,8 +93,8 @@ body {
 }
 
 h2 {
-  margin-top: 10px;
-  margin-left: 10px;
+  margin-top: 25px;
+  margin-left: 25px;
   text-align: left;
 }
 
@@ -135,6 +136,7 @@ footer {
   width: 100%;
   height: 4%;
   padding-bottom: 1%;
+  z-index: 0;
 }
 
 @media (max-width: 768px) {
