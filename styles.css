@@ -56,8 +56,8 @@ body {
 }
 
 .box-f {
-  height: 32%;
-  padding: 20px;
+  height: 500px;
+  width: 500px;
   background-color: #ffbeba;
   border: 1px solid #868686;
   margin: 10px;
@@ -65,8 +65,8 @@ body {
 }
 
 .box-p {
-  height: 32%;
-  padding: 20px;
+  height: 500px;
+  width: 500px;
   background-color: #c8edfd;
   border: 1px solid #868686;
   margin: 10px;
@@ -74,8 +74,8 @@ body {
 }
 
 .box-i {
-  height: 32%;
-  padding: 20px;
+  height: 500px;
+  width: 500px;
   background-color: #ffdcaa;
   border: 1px solid #868686;
   margin: 10px;
@@ -83,8 +83,8 @@ body {
 }
 
 .box-w {
-  height: 32%;
-  padding: 20px;
+  height: 500px;
+  width: 500px;
   background-color: #c3f2cb;
   border: 1px solid #868686;
   margin: 10px;
@@ -92,11 +92,19 @@ body {
 }
 
 h2 {
-  margin-top: 0px;
+  margin-top: 10px;
+  margin-left: 10px;
+  text-align: left;
 }
 
 h1 {
   font-size: 25px;
+}
+
+.content {
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: 185px;
 }
 
 .flexbox {
