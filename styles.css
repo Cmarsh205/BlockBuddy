@@ -27,10 +27,13 @@ body {
 }
 
 .navbar ul li {
+  display: flex;
+  align-items: center;
   padding: 10px 20px;
 }
 
 .navbar ul li a {
+  display: inline-block;
   color: #000000;
   text-decoration: none;
   font-size: 18px;
@@ -38,6 +41,18 @@ body {
 
 .navbar ul li a:hover {
   background-color: #ffbb00;
+}
+
+.navbar ul li span.material-symbols-outlined {
+  display: inline-block;
+  width: 20px; 
+  text-align: center;
+  margin-right: 10px; 
+}
+
+.logout {
+  margin-top: 28%;
+  position: fixed;
 }
 
 .box-f {
@@ -101,6 +116,17 @@ h1 {
   padding: 8px;
   border: 1px solid #868686;
   border-radius: 10px;
+}
+
+footer {
+  background-color: #ffcc00;
+  color: #000000;
+  text-align: center;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: 4%;
+  padding-bottom: 1%;
 }
 
 @media (max-width: 768px) {
