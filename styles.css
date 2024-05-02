@@ -52,13 +52,14 @@ body {
 }
 
 .logout {
-  margin-top: 28%;
+  bottom: 0;
   position: fixed;
+  margin-bottom: 5px;
 }
 
 .box-f {
   height: 500px;
-  width: 750px;
+  width: 950px;
   background-color: #ffbeba;
   border: 1px solid #868686;
   margin: 10px;
@@ -67,7 +68,7 @@ body {
 
 .box-p {
   height: 500px;
-  width: 400px;
+  width: 500px;
   background-color: #c8edfd;
   border: 1px solid #868686;
   margin: 10px;
@@ -134,7 +135,7 @@ footer {
   position: fixed;
   bottom: 0;
   width: 100%;
-  height: 4%;
+  height: 3%;
   padding-bottom: 1%;
   z-index: 0;
 }
