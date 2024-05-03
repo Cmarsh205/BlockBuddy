@@ -33,15 +33,18 @@ body {
   padding: 10px 20px;
 }
 
-.navbar ul li a {
-  display: inline-block;
-  color: #000000;
+button {
   text-decoration: none;
-  font-size: 18px;
+  background-color: transparent;
+  border: none;
+  font-size: 16px;
+  color: #000000;
+  cursor: pointer;
 }
 
-.navbar ul li a:hover {
-  background-color: #ffbb00;
+button:hover {
+  cursor: pointer;
+  text-decoration: underline;
 }
 
 .navbar ul li span.material-symbols-outlined {
@@ -58,8 +61,8 @@ body {
 }
 
 .box-f {
-  height: 500px;
-  width: 950px;
+  height: 50%;
+  width: 65%;
   background-color: #ffbeba;
   border: 1px solid #868686;
   margin: 10px;
@@ -67,8 +70,8 @@ body {
 }
 
 .box-p {
-  height: 500px;
-  width: 500px;
+  height: 50%;
+  width: 25%;
   background-color: #c8edfd;
   border: 1px solid #868686;
   margin: 10px;
@@ -76,17 +79,17 @@ body {
 }
 
 .box-i {
-  height: 500px;
-  width: 500px;
+  height: 50%;
+  width: 50%;
   background-color: #ffdcaa;
   border: 1px solid #868686;
   margin: 10px;
   border-radius: 15px;
-}
+} 
 
 .box-w {
-  height: 500px;
-  width: 500px;
+  height: 50%;
+  width: 50%;
   background-color: #c3f2cb;
   border: 1px solid #868686;
   margin: 10px;
@@ -106,13 +109,17 @@ h1 {
 .content {
   display: flex;
   flex-wrap: wrap;
-  margin-left: 185px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding-left: 190px;
+  width: 100%;
+  height: 100%;
 }
 
 .flexbox {
   display: flex;
-  justify-content: center;
   flex-wrap: wrap;
+  height: 100%;
 }
 
 .search-form {
@@ -135,7 +142,7 @@ footer {
   position: fixed;
   bottom: 0;
   width: 100%;
-  height: 3%;
+  height: 2%;
   padding-bottom: 1%;
   z-index: 0;
 }
