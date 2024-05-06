@@ -147,6 +147,13 @@ footer {
   z-index: 0;
 }
 
+.featIcons {
+  display: flex;
+  width: 40%;
+  margin: 7%;
+  border-radius: 5%;
+}
+
 @media (max-width: 768px) {
   .content {
     flex-direction: column;
