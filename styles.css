@@ -70,7 +70,7 @@ button:hover {
 }
 
 .box-p {
-  height: 50%;
+  height: 100%;
   width: 25%;
   background-color: #c8edfd;
   border: 1px solid #868686;
@@ -82,26 +82,27 @@ button:hover {
   grid-gap: 10px; 
 }
 
-.box-p h2 {
-  
-}
-
 .box-i {
   height: 50%;
-  width: 50%;
+  width: 25%;
   background-color: #ffdcaa;
   border: 1px solid #868686;
   margin: 10px;
   border-radius: 15px;
+  position: relative;
+  left: 190px;
+  margin-bottom: 4%;
 } 
 
 .box-w {
   height: 50%;
-  width: 50%;
+  width: 56%;
   background-color: #c3f2cb;
   border: 1px solid #868686;
   margin: 10px;
   border-radius: 15px;
+  position: relative;
+  left: 190px;
 }
 
 h2 {
@@ -117,8 +118,6 @@ h1 {
 .content {
   display: flex;
   flex-wrap: wrap;
-  align-items: flex-start;
-  justify-content: flex-start;
   padding-left: 190px;
   width: 100%;
   height: 100%;
@@ -150,8 +149,8 @@ footer {
   position: fixed;
   bottom: 0;
   width: 100%;
-  height: 2%;
-  padding-bottom: 1%;
+  height: 1.5%;
+  padding-bottom: 1.5%;
   z-index: 0;
 }
 
@@ -218,6 +217,17 @@ footer {
 .feat-icons {
   max-width: 85%;
   max-height: 85%;
+}
+
+.video {
+  display: flex;
+  justify-content: center;
+  align-items: center; 
+  padding-bottom: 5%;
+}
+.box-i p {
+  padding-left: 5%;
+  font-size: 18px;
 }
 
 @media (max-width: 768px) {
