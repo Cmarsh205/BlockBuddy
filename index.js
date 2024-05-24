@@ -29,7 +29,7 @@ document.addEventListener("DOMContentLoaded", () => {
       .then((data) => {
         const uniqueIndices = new Set();
         const sets = [];
-        const numSets = 5;
+        const numSets = 6;
 
         while (uniqueIndices.size < numSets) {
           const idx = Math.round(Math.random() * PAGE_SIZE);
@@ -41,6 +41,7 @@ document.addEventListener("DOMContentLoaded", () => {
         }
 
         const featuredSetsList = document.createElement("div");
+        featuredSetsList.classList.add("featuredSetsList");
 
         for (let i = 0; i < sets.length; i++) {
           const set = sets[i];
@@ -53,7 +54,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
           collectionBtn.addEventListener("click", () => {
             let collectionValue = localStorage.getItem("collection");
-            console.log("collection", collectionValue);
 
             if (collectionValue === null) {
               localStorage.setItem("collection", "[]");
@@ -62,15 +62,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
             const collection = JSON.parse(collectionValue);
 
-            collection.push(set.set_num);
+            collection.push(set);
             localStorage.setItem("collection", JSON.stringify(collection));
-
-            console.log("post collection", collection);
           });
 
           wishlistBtn.addEventListener("click", () => {
             let wishlistValue = localStorage.getItem("wishlist");
-            console.log("wishlist", wishlistValue);
 
             if (wishlistValue === null) {
               localStorage.setItem("wishlist", "[]");
@@ -79,10 +76,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
             const wishlist = JSON.parse(wishlistValue);
 
-            wishlist.push(set.set_num);
+            wishlist.push(set);
             localStorage.setItem("wishlist", JSON.stringify(wishlist));
-
-            console.log("post wishlist", wishlist);
           });
 
           setHeader.innerText = set.name;
@@ -95,10 +90,12 @@ document.addEventListener("DOMContentLoaded", () => {
           setHeader.classList.add("setName");
           setPic.classList.add("setImg");
           setNumber.classList.add("setNum");
+          wishlistBtn.classList.add("wishlistBtn");
+          collectionBtn.classList.add("collectionBtn");
 
           setDiv.appendChild(setHeader);
-          setDiv.appendChild(setPic);
           setDiv.appendChild(setNumber);
+          setDiv.appendChild(setPic);
           setDiv.appendChild(collectionBtn);
           setDiv.appendChild(wishlistBtn);
           featuredSetsList.appendChild(setDiv);
