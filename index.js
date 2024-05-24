@@ -46,21 +46,61 @@ document.addEventListener("DOMContentLoaded", () => {
           const set = sets[i];
           const setDiv = document.createElement("div");
           const setHeader = document.createElement("h3");
-          const setPic = document.createElement("img")
+          const setPic = document.createElement("img");
           const setNumber = document.createElement("p");
+          const collectionBtn = document.createElement("button");
+          const wishlistBtn = document.createElement("button");
+
+          collectionBtn.addEventListener("click", () => {
+            let collectionValue = localStorage.getItem("collection");
+            console.log("collection", collectionValue);
+
+            if (collectionValue === null) {
+              localStorage.setItem("collection", "[]");
+              collectionValue = "[]";
+            }
+
+            const collection = JSON.parse(collectionValue);
+
+            collection.push(set.set_num);
+            localStorage.setItem("collection", JSON.stringify(collection));
+
+            console.log("post collection", collection);
+          });
+
+          wishlistBtn.addEventListener("click", () => {
+            let wishlistValue = localStorage.getItem("wishlist");
+            console.log("wishlist", wishlistValue);
+
+            if (wishlistValue === null) {
+              localStorage.setItem("wishlist", "[]");
+              wishlistValue = "[]";
+            }
+
+            const wishlist = JSON.parse(wishlistValue);
+
+            wishlist.push(set.set_num);
+            localStorage.setItem("wishlist", JSON.stringify(wishlist));
+
+            console.log("post wishlist", wishlist);
+          });
 
           setHeader.innerText = set.name;
           setPic.src = set.set_img_url;
           setNumber.innerText = set.set_num;
-        
-          setDiv.classList.add('setContainer')
-          setHeader.classList.add('setName')
-          setPic.classList.add('setImg')
-          setNumber.classList.add('setNum')
+          collectionBtn.innerText = "Add to collection";
+          wishlistBtn.innerText = "Add to wishlist";
+
+          setDiv.classList.add("setContainer");
+          setHeader.classList.add("setName");
+          setPic.classList.add("setImg");
+          setNumber.classList.add("setNum");
 
           setDiv.appendChild(setHeader);
           setDiv.appendChild(setPic);
           setDiv.appendChild(setNumber);
+          setDiv.appendChild(collectionBtn);
+          setDiv.appendChild(wishlistBtn);
           featuredSetsList.appendChild(setDiv);
         }
 
