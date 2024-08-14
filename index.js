@@ -1,4 +1,7 @@
 document.addEventListener("DOMContentLoaded", () => {
+  /**
+   * Navigation
+   */
   const homeBtn = document.getElementById("homeBtn");
   const collectionBtn = document.getElementById("collectionBtn");
   const wishlistBtn = document.getElementById("wishlistBtn");
@@ -13,10 +16,26 @@ document.addEventListener("DOMContentLoaded", () => {
     window.location.href = "wishlist.html";
   });
 
+  /**
+   * Search
+   */
+  document
+    .getElementById("searchForm")
+    .addEventListener("submit", function (event) {
+      event.preventDefault();
+      const query = document.getElementById("searchInput").value;
+
+      console.log("query", query);
+
+      if (query) {
+        window.location.href = `search.html?q=${query}`;
+      }
+    });
+
   const PAGE_SIZE = 50;
 
   function getFeaturedSets(page = 1, pageSize = 100) {
-    const apiKey = "";
+    const apiKey = "ebd77297ed794bb129b23c3cd006661e";
     const baseUrl = "https://rebrickable.com";
 
     const headers = new Headers();

@@ -13,15 +13,18 @@ document.addEventListener("DOMContentLoaded", () => {
     window.location.href = "wishlist.html";
   });
 
-  const collectionString = localStorage.getItem("collection");
-  const collectionList = JSON.parse(collectionString);
+  const collectionListDiv = document.getElementById("collectionList");
+
+  let collectionString = localStorage.getItem("collection");
 
   if (collectionString === null) {
     localStorage.setItem("collection", "[]");
     collectionString = "[]";
   }
 
-  for (let i = 0; i < sets.length; i++) {
+  const collection = JSON.parse(collectionString);
+
+  for (const set of collection) {
     const setDiv = document.createElement("div");
     const setHeader = document.createElement("h3");
     const setPic = document.createElement("img");
@@ -39,6 +42,6 @@ document.addEventListener("DOMContentLoaded", () => {
     setDiv.appendChild(setHeader);
     setDiv.appendChild(setNumber);
     setDiv.appendChild(setPic);
-    collectionList.appendChild(setDiv);
+    collectionListDiv.appendChild(setDiv);
   }
 });
