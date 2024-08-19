@@ -1,4 +1,7 @@
 document.addEventListener("DOMContentLoaded", () => {
+  /**
+   * Navigation
+   */
   const homeBtn = document.getElementById("homeBtn");
   const collectionBtn = document.getElementById("collectionBtn");
   const wishlistBtn = document.getElementById("wishlistBtn");
@@ -12,6 +15,22 @@ document.addEventListener("DOMContentLoaded", () => {
   wishlistBtn.addEventListener("click", () => {
     window.location.href = "wishlist.html";
   });
+
+  /**
+   * Search
+   */
+  document
+    .getElementById("searchForm")
+    .addEventListener("submit", function (event) {
+      event.preventDefault();
+      const query = document.getElementById("searchInput").value;
+
+      console.log("query", query);
+
+      if (query) {
+        window.location.href = `search.html?q=${query}`;
+      }
+    });
 
   const collectionListDiv = document.getElementById("collectionList");
 
