@@ -49,7 +49,7 @@ document.addEventListener("DOMContentLoaded", () => {
     headers.set(`Authorization`, `key ${apiKey}`);
 
     fetch(
-      `${baseUrl}/api/v3/lego/sets?page=${1}&page_size=${5}&search=${query}`,
+      `${baseUrl}/api/v3/lego/sets?page=${1}&page_size=${20}&search=${query}`,
       {
         headers: headers,
       }
@@ -65,14 +65,34 @@ document.addEventListener("DOMContentLoaded", () => {
 
   function displayResults(results) {
     console.log(results);
-    const resultsContainer = document.getElementById("results");
+    const resultsContainer = document.getElementById("resultsList");
     resultsContainer.innerHTML = "";
 
     if (results.length === 0) {
       resultsContainer.innerHTML = "<p>No results found.</p>";
       return;
     }
+    const resultsListDiv = document.getElementById("resultsList");
 
-    results.forEach((result) => {});
+    results.forEach((set) => {
+      const setDiv = document.createElement("div");
+      const setHeader = document.createElement("h3");
+      const setPic = document.createElement("img");
+      const setNumber = document.createElement("p");
+
+      setHeader.innerText = set.name;
+      setPic.src = set.set_img_url;
+      setNumber.innerText = set.set_num;
+
+      setDiv.classList.add("setContainer");
+      setHeader.classList.add("setName");
+      setPic.classList.add("setImg");
+      setNumber.classList.add("setNum");
+
+      setDiv.appendChild(setHeader);
+      setDiv.appendChild(setNumber);
+      setDiv.appendChild(setPic);
+      resultsListDiv.appendChild(setDiv);
+    });
   }
 });
