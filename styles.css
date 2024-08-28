@@ -244,11 +244,11 @@ footer {
   border: 1px solid #868686;
   margin: 10px;
   border-radius: 15px;
-  width: 100%;
+  width: 87%;
   height: 100%;
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-  grid-gap: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
 }
 
 .your-wishlist {
@@ -256,20 +256,22 @@ footer {
   border: 1px solid #868686;
   margin: 10px;
   border-radius: 15px;
-  width: 100%;
+  width: 87%;
   height: 100%;
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-  grid-gap: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
 }
 
 .setContainer {
   display: flex;
   flex-direction: column;
+  flex-wrap: wrap;
   justify-content: center;
   align-items: center;
   margin: 10px;
-  min-width: 150px; 
+  max-width: 15%; 
+  max-height: 50%;
 }
 
 .setImg {
@@ -298,6 +300,22 @@ footer {
   overflow-x: auto; 
   width: 100%;
   justify-content: space-around; 
+}
+
+.collectionList {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: space-around;
+  padding: 2%;
+}
+
+.wishlistList {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: space-around;
+  padding: 2%;
 }
 
 @media (max-width: 768px) {
