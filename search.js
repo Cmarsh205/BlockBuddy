@@ -49,7 +49,7 @@ document.addEventListener("DOMContentLoaded", () => {
     headers.set(`Authorization`, `key ${apiKey}`);
 
     fetch(
-      `${baseUrl}/api/v3/lego/sets?page=${1}&page_size=${20}&search=${query}`,
+      `${baseUrl}/api/v3/lego/sets?page=${1}&page_size=${70}&search=${query}`,
       {
         headers: headers,
       }
