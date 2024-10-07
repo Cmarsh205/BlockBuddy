@@ -68,8 +68,21 @@ document.addEventListener("DOMContentLoaded", () => {
           const setHeader = document.createElement("h3");
           const setPic = document.createElement("img");
           const setNumber = document.createElement("p");
+          const link = document.createElement("link");
+          link.rel = "stylesheet";
+          link.href =
+            "https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0";
+
+          document.head.appendChild(link);
+
           const collectionBtn = document.createElement("button");
           const wishlistBtn = document.createElement("button");
+          const cIcon = document.createElement("span");
+          cIcon.classList.add("material-symbols-outlined");
+          cIcon.textContent = "menu_book";
+          const wIcon = document.createElement("span");
+          wIcon.classList.add("material-symbols-outlined");
+          wIcon.textContent = "favorite";
 
           collectionBtn.addEventListener("click", () => {
             let collectionValue = localStorage.getItem("collection");
@@ -102,19 +115,19 @@ document.addEventListener("DOMContentLoaded", () => {
           setHeader.innerText = set.name;
           setPic.src = set.set_img_url;
           setNumber.innerText = set.set_num;
-          collectionBtn.innerText = "Add to collection";
-          wishlistBtn.innerText = "Add to wishlist";
 
           setDiv.classList.add("setContainer");
           setHeader.classList.add("setName");
           setPic.classList.add("setImg");
           setNumber.classList.add("setNum");
-          wishlistBtn.classList.add("wishlistBtn");
-          collectionBtn.classList.add("collectionBtn");
+          wishlistBtn.classList.add("wishlistBtnSP");
+          collectionBtn.classList.add("collectionBtnSP");
 
           setDiv.appendChild(setHeader);
           setDiv.appendChild(setNumber);
           setDiv.appendChild(setPic);
+          collectionBtn.appendChild(cIcon);
+          wishlistBtn.appendChild(wIcon);
           setDiv.appendChild(collectionBtn);
           setDiv.appendChild(wishlistBtn);
           featuredSetsList.appendChild(setDiv);
@@ -129,3 +142,16 @@ document.addEventListener("DOMContentLoaded", () => {
 
   getFeaturedSets(page, PAGE_SIZE);
 });
+
+/**
+ * What you might like
+ *
+ * 1. Iterate through collection/wishlist
+ *  1.1. get localstorage for list
+ *  1.2. loop through the list to search for theme
+ * 2. Count the number of times a theme appears
+ * 3. Take the top X themes and make API request for each of them (there is a themes endpoint)
+ * 4. Take the results, iterate over them to display them in the container
+ *
+ * All of the code has basically been done already, just need to piece it together
+ */

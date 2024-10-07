@@ -79,8 +79,21 @@ document.addEventListener("DOMContentLoaded", () => {
       const setHeader = document.createElement("h3");
       const setPic = document.createElement("img");
       const setNumber = document.createElement("p");
+      const link = document.createElement("link");
+      link.rel = "stylesheet";
+      link.href =
+        "https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0";
+
+      document.head.appendChild(link);
+
       const collectionBtn = document.createElement("button");
       const wishlistBtn = document.createElement("button");
+      const cIcon = document.createElement("span");
+      cIcon.classList.add("material-symbols-outlined");
+      cIcon.textContent = "menu_book";
+      const wIcon = document.createElement("span");
+      wIcon.classList.add("material-symbols-outlined");
+      wIcon.textContent = "favorite";
 
       collectionBtn.addEventListener("click", () => {
         let collectionValue = localStorage.getItem("collection");
@@ -113,8 +126,6 @@ document.addEventListener("DOMContentLoaded", () => {
       setHeader.innerText = set.name;
       setPic.src = set.set_img_url;
       setNumber.innerText = set.set_num;
-      collectionBtn.innerText = "Add to collection";
-      wishlistBtn.innerText = "Add to wishlist";
 
       setDiv.classList.add("setContainer");
       setHeader.classList.add("setName");
@@ -126,6 +137,8 @@ document.addEventListener("DOMContentLoaded", () => {
       setDiv.appendChild(setHeader);
       setDiv.appendChild(setNumber);
       setDiv.appendChild(setPic);
+      collectionBtn.appendChild(cIcon);
+      wishlistBtn.appendChild(wIcon);
       setDiv.appendChild(collectionBtn);
       setDiv.appendChild(wishlistBtn);
       resultsListDiv.appendChild(setDiv);

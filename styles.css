@@ -256,10 +256,11 @@ footer {
   border: 1px solid #868686;
   margin: 10px;
   border-radius: 15px;
-  width: 87%;
+  width: 84%;
   height: 100%;
   display: flex;
   flex-wrap: wrap;
+  padding: 2%;
   gap: 10px;
   box-shadow: 2px 2px 10px;
 }
@@ -269,7 +270,7 @@ footer {
   border: 1px solid #868686;
   margin: 10px;
   border-radius: 15px;
-  width: 87%;
+  width: 84%;
   height: 100%;
   display: flex;
   flex-wrap: wrap;
@@ -283,12 +284,11 @@ footer {
   border: 1px solid #868686;
   margin: 10px;
   border-radius: 15px;
-  width: 85%;
+  width: 84%;
   height: 100%;
   display: flex;
   flex-wrap: wrap;
-  padding-left: 3%;
-  padding-bottom: 2%;
+  padding: 2%;
   gap: 10px;
   box-shadow: 2px 2px 10px;
 }
@@ -301,12 +301,18 @@ footer {
   align-items: center;
   margin: 10px;
   width: 12%;
+  border: 1px solid #868686;
+  border-radius: 15px;
+  box-shadow: 2px 2px 10px;
+  background-color: rgb(240, 240, 240);
+  padding: 1%;
 }
 
 .setImg {
   width: 90%;
   height: 150px;
   border-radius: 5%;
+  padding: 2%;
 }
 
 .setName { 
@@ -319,30 +325,34 @@ footer {
   text-align: center;
 }
 
-.wishlistBtn, .collectionBtn {
+.wishlistBtnSP {
   border-style: solid;
   border-width: 2px;
-  background-color: #ff7c75;
-  margin-top: 5%;
-  border-radius: 15px;
-  box-shadow: 2px 2px 10px;
-}
-
-.wishlistBtnSP, .collectionBtnSP {
-  border-style: solid;
-  border-width: 2px;
-  background-color: #39ff92;
+  background-color: #efceff;;
   margin-top: 5%;
   border-radius: 15px;
   box-shadow: 1px 1px 5px;
+  cursor: pointer;
+}
+
+.collectionBtnSP {
+  border-style: solid;
+  border-width: 2px;
+  background-color: #cbfcff;;
+  margin-top: 5%;
+  border-radius: 15px;
+  box-shadow: 1px 1px 5px;
+  cursor: pointer;
 }
 
 .deleteBtn {
+  background-color: rgb(255, 36, 36);
   border-style: solid;
   border-width: 2px;
-  background-color: #ff2b20;
   margin-top: 5%;
   border-radius: 15px;
+  box-shadow: 1px 1px 5px;
+  cursor: pointer;
 }
 
 .featuredSetsList {
