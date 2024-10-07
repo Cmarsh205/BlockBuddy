@@ -41,7 +41,7 @@ document.addEventListener("DOMContentLoaded", () => {
     collectionString = "[]";
   }
 
-  const collection = JSON.parse(collectionString);
+  let collection = JSON.parse(collectionString);
 
   for (const set of collection) {
     const setDiv = document.createElement("div");
@@ -51,6 +51,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const deleteBtn = document.createElement("button");
 
     deleteBtn.addEventListener("click", () => {
+      
     });
 
     setHeader.innerText = set.name;
