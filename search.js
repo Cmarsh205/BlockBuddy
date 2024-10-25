@@ -5,6 +5,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const homeBtn = document.getElementById("homeBtn");
   const collectionBtn = document.getElementById("collectionBtn");
   const wishlistBtn = document.getElementById("wishlistBtn");
+  const logo = document.getElementById("bbLogo");
 
   homeBtn.addEventListener("click", () => {
     window.location.href = "index.html";
@@ -15,6 +16,11 @@ document.addEventListener("DOMContentLoaded", () => {
   wishlistBtn.addEventListener("click", () => {
     window.location.href = "wishlist.html";
   });
+  logo.addEventListener("click", () => {
+    window.location.href = "index.html";
+  });
+
+
 
   /**
    * Search

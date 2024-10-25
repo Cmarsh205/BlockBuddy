@@ -5,6 +5,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const homeBtn = document.getElementById("homeBtn");
   const collectionBtn = document.getElementById("collectionBtn");
   const wishlistBtn = document.getElementById("wishlistBtn");
+  const logo = document.getElementById("bbLogo");
 
   homeBtn.addEventListener("click", () => {
     window.location.href = "index.html";
@@ -14,6 +15,9 @@ document.addEventListener("DOMContentLoaded", () => {
   });
   wishlistBtn.addEventListener("click", () => {
     window.location.href = "wishlist.html";
+  });
+  logo.addEventListener("click", () => {
+    window.location.href = "index.html";
   });
 
   /**
@@ -100,6 +104,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
           wishlistBtn.addEventListener("click", () => {
             let wishlistValue = localStorage.getItem("wishlist");
+            alert("Added to Wishlist");
 
             if (wishlistValue === null) {
               localStorage.setItem("wishlist", "[]");
@@ -141,6 +146,36 @@ document.addEventListener("DOMContentLoaded", () => {
   const page = Math.ceil(Math.random() * 100);
 
   getFeaturedSets(page, PAGE_SIZE);
+
+  document.getElementById("imageContainer1").addEventListener("click", () => {
+    const query = "star wars";
+    window.location.href = `search.html?q=${query}`;
+  });
+
+  document.getElementById("imageContainer2").addEventListener("click", () => {
+    const query = "ninjago";
+    window.location.href = `search.html?q=${query}`;
+  });
+
+  document.getElementById("imageContainer3").addEventListener("click", () => {
+    const query = "harry potter";
+    window.location.href = `search.html?q=${query}`;
+  });
+
+  document.getElementById("imageContainer4").addEventListener("click", () => {
+    const query = "technic";
+    window.location.href = `search.html?q=${query}`;
+  });
+
+  document.getElementById("imageContainer5").addEventListener("click", () => {
+    const query = "lord of the rings";
+    window.location.href = `search.html?q=${query}`;
+  });
+
+  document.getElementById("imageContainer6").addEventListener("click", () => {
+    const query = "marvel";
+    window.location.href = `search.html?q=${query}`;
+  });
 });
 
 /**

@@ -6,8 +6,7 @@ body {
 .navbar-title {
   padding: 20px;
   margin: 0;
-  text-align: left;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
 }
 
 .navbar {
@@ -164,6 +163,7 @@ h1 {
 footer {
   background-color: #ffcc00;
   color: #000000;
+  border: #000000;
   text-align: center;
   position: fixed;
   bottom: 0;
@@ -181,6 +181,7 @@ footer {
   display: flex;
   justify-content: center;
   align-items: center;
+  cursor: pointer;
 }
 
 .image-container2 {
@@ -191,6 +192,7 @@ footer {
   display: flex;
   justify-content: center;
   align-items: center;
+  cursor: pointer;
 }
 
 .image-container3 {
@@ -201,6 +203,7 @@ footer {
   display: flex;
   justify-content: center;
   align-items: center;
+  cursor: pointer;
 }
 
 .image-container4 {
@@ -211,6 +214,7 @@ footer {
   display: flex;
   justify-content: center;
   align-items: center;
+  cursor: pointer;
 }
 
 .image-container5 {
@@ -221,6 +225,7 @@ footer {
   display: flex;
   justify-content: center;
   align-items: center;
+  cursor: pointer;
 }
 
 .image-container6 {
@@ -231,6 +236,7 @@ footer {
   display: flex;
   justify-content: center;
   align-items: center; 
+  cursor: pointer;
 }
 
 .feat-icons {
