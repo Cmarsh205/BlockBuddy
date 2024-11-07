@@ -71,7 +71,6 @@ button:hover {
   border-radius: 15px;
   height: 98%;
   margin: 10px;
-  box-shadow: 2px 2px 10px;
 }
 
 .box-p {
@@ -85,7 +84,6 @@ button:hover {
   grid-template-columns: repeat(2, 1fr); 
   grid-template-rows: repeat(4, 1fr);
   grid-gap: 10px; 
-  box-shadow: 2px 2px 10px;
 }
 
 .box-i {
@@ -98,7 +96,6 @@ button:hover {
   position: relative;
   left: 190px;
   margin-bottom: 4%;
-  box-shadow: 2px 2px 10px;
 } 
 
 .box-w {
@@ -110,7 +107,6 @@ button:hover {
   border-radius: 15px;
   position: relative;
   left: 190px;
-  box-shadow: 2px 2px 10px;
 }
 
 h2 {
@@ -296,7 +292,6 @@ footer {
   flex-wrap: wrap;
   padding: 2%;
   gap: 10px;
-  box-shadow: 2px 2px 10px;
 }
 
 .setContainer {
@@ -309,7 +304,6 @@ footer {
   width: 12%;
   border: 1px solid #868686;
   border-radius: 15px;
-  box-shadow: 2px 2px 10px;
   padding: 1%;
   background-image: url('Media/brick_480.png');
 }
@@ -329,6 +323,13 @@ footer {
   width: 100%;
   text-align: center;
   font-size: 24px;
+}
+
+.btnContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  width: 85%;
 }
 
 .wishlistBtnSP {
@@ -406,6 +407,14 @@ footer {
   flex-direction: row;
   justify-content: space-around;
   padding: 2%;
+}
+
+.wymlSetsList {
+  display: flex;
+  flex-wrap: nowrap; 
+  overflow-x: auto; 
+  width: 100%;
+  justify-content: space-around; 
 }
 
 @media (max-width: 768px) {

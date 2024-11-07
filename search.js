@@ -20,8 +20,6 @@ document.addEventListener("DOMContentLoaded", () => {
     window.location.href = "index.html";
   });
 
-
-
   /**
    * Search
    */
@@ -100,6 +98,7 @@ document.addEventListener("DOMContentLoaded", () => {
       const wIcon = document.createElement("span");
       wIcon.classList.add("material-symbols-outlined");
       wIcon.textContent = "favorite";
+      const btnDiv = document.createElement("div");
 
       collectionBtn.addEventListener("click", () => {
         let collectionValue = localStorage.getItem("collection");
@@ -139,6 +138,7 @@ document.addEventListener("DOMContentLoaded", () => {
       setNumber.classList.add("setNum");
       wishlistBtn.classList.add("wishlistBtnSP");
       collectionBtn.classList.add("collectionBtnSP");
+      btnDiv.classList.add("btnContainer");
 
       setDiv.appendChild(setHeader);
       setDiv.appendChild(setNumber);
@@ -147,6 +147,9 @@ document.addEventListener("DOMContentLoaded", () => {
       wishlistBtn.appendChild(wIcon);
       setDiv.appendChild(collectionBtn);
       setDiv.appendChild(wishlistBtn);
+      btnDiv.appendChild(collectionBtn);
+      btnDiv.appendChild(wishlistBtn);
+      setDiv.appendChild(btnDiv);
       resultsListDiv.appendChild(setDiv);
     });
   }
