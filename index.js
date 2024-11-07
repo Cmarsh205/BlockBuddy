@@ -203,12 +203,13 @@ document.addEventListener("DOMContentLoaded", () => {
     }
     let maxKey = null;
     let maxValue = -Infinity;
-
+    
     for (const [key, value] of Object.entries(occurrences)) {
       if (value > maxValue) {
         maxValue = value;
         maxKey = key;
       }
+    }
       const apiKey = "ebd77297ed794bb129b23c3cd006661e";
       const baseUrl = "https://rebrickable.com";
 
@@ -225,14 +226,14 @@ document.addEventListener("DOMContentLoaded", () => {
           const numSets = 6;
 
           while (uniqueIndices.size < numSets) {
-            const idx = Math.round(Math.random() * PAGE_SIZE);
+            const idx = Math.round(Math.random() * data.results.length);
 
             if (!uniqueIndices.has(idx)) {
               sets.push(data.results[idx]);
               uniqueIndices.add(idx);
             }
           }
-
+         
           const wymlSetsList = document.createElement("div");
           wymlSetsList.classList.add("wymlSetsList");
 
@@ -316,7 +317,7 @@ document.addEventListener("DOMContentLoaded", () => {
           const wymlSetsDiv = document.getElementById("box-w");
           wymlSetsDiv.appendChild(wymlSetsList);
         });
-    }
+    
   }
   getWhatYouMightLike();
 });
