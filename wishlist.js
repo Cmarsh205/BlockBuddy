@@ -37,6 +37,9 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     });
 
+   /**
+   * Wishlist list
+   */  
   const wishlistListDiv = document.getElementById("wishlistList");
 
   let wishlistString = localStorage.getItem("wishlist");

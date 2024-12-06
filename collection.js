@@ -20,8 +20,6 @@ document.addEventListener("DOMContentLoaded", () => {
     window.location.href = "index.html";
   });
 
-
-
   /**
    * Search
    */
@@ -38,6 +36,9 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     });
 
+  /**
+   * Collection list
+   */
   const collectionListDiv = document.getElementById("collectionList");
 
   let collectionString = localStorage.getItem("collection");

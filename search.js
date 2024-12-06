@@ -67,6 +67,9 @@ document.addEventListener("DOMContentLoaded", () => {
       });
   }
 
+  /**
+   * Search results
+   */
   function displayResults(results) {
     console.log(results);
     const resultsContainer = document.getElementById("resultsList");
@@ -112,6 +115,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
         collection.push(set);
         localStorage.setItem("collection", JSON.stringify(collection));
+
+        showCustomAlert("Added to Collection!");
       });
 
       wishlistBtn.addEventListener("click", () => {
@@ -126,6 +131,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
         wishlist.push(set);
         localStorage.setItem("wishlist", JSON.stringify(wishlist));
+
+        showCustomAlert("Added to Wishlist!");
       });
 
       setHeader.innerText = set.name;
@@ -152,5 +159,25 @@ document.addEventListener("DOMContentLoaded", () => {
       setDiv.appendChild(btnDiv);
       resultsListDiv.appendChild(setDiv);
     });
+  }
+
+  /**
+   * Button alert
+   */
+  function showCustomAlert(message) {
+    const alertBox = document.getElementById("customAlert");
+    const alertMessage = document.getElementById("alertMessage");
+    const closeAlert = document.getElementById("closeAlert");
+
+    alertMessage.innerText = message;
+    alertBox.classList.remove("hidden");
+
+    closeAlert.addEventListener("click", () => {
+      alertBox.classList.add("hidden");
+    });
+
+    setTimeout(() => {
+      alertBox.classList.add("hidden");
+    }, 3000);
   }
 });
