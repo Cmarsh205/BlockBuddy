@@ -35,13 +35,17 @@
             </li>
           </ul>
           </ul>
-          <form id="searchForm" class="search-form" action="#" method="get">
+          <form id="searchForm" class="search-container" action="#" method="get">
+            <div class="search-box">
             <input type="text" id="searchInput" class="search-input" placeholder="Search..." />
+            <button type="submit">🔍</button>
+          </div>
           </form>
         </nav>
         <div class="content">
           <h2>Search Results</h2>
           <div id="resultsList" class="your-results">
+            <img class = "loader" id = "loader" src="Media/fade-stagger-squares.svg" alt="loading">
           </div>
         </div>
     </div>

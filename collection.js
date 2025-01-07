@@ -40,6 +40,8 @@ document.addEventListener("DOMContentLoaded", () => {
    * Collection list
    */
   const collectionListDiv = document.getElementById("collectionList");
+  const loaderSVG = document.getElementById("loader");
+  if (loaderSVG) loaderSVG.remove();
 
   let collectionString = localStorage.getItem("collection");
 

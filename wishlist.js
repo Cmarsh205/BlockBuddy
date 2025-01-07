@@ -41,6 +41,8 @@ document.addEventListener("DOMContentLoaded", () => {
    * Wishlist list
    */  
   const wishlistListDiv = document.getElementById("wishlistList");
+  const loaderSVG = document.getElementById("loader");
+  if (loaderSVG) loaderSVG.remove();
 
   let wishlistString = localStorage.getItem("wishlist");
 

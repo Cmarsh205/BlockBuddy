@@ -34,14 +34,18 @@
               <button id="logoutBtn">Logout</button>
             </li>
           </ul>
-          <form id="searchForm" class="search-form" action="#" method="get">
+          <form id="searchForm" class="search-container" action="#" method="get">
+            <div class="search-box">
             <input type="text" id="searchInput" class="search-input" placeholder="Search..." />
+            <button type="submit">🔍</button>
+          </div>
           </form>
         </nav>
       </div>
       <div class="homeContent">
         <div class="box-f" id="box-f">
           <h2 class="featHeader">Featured Sets</h2>
+          <img class = "loader" id = "loader" src="Media/fade-stagger-squares.svg" alt="loading">
         </div>
         <div class="box-p">
           <h2>Popular Themes</h2>
@@ -80,6 +84,7 @@
         </div>
         <div class="box-w" id="box-w">
           <h2>What You Might Like</h2>
+          <img class = "loader1" id = "loader1" src="Media/fade-stagger-squares.svg" alt="loading">
         </div>
       </div>
       <div id="customAlert" class="custom-alert hidden">

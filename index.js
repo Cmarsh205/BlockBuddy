@@ -58,7 +58,7 @@ document.addEventListener("DOMContentLoaded", () => {
         const numSets = 6;
 
         while (uniqueIndices.size < numSets) {
-          const idx = Math.round(Math.random() * PAGE_SIZE);
+          const idx = Math.floor(Math.random() * PAGE_SIZE);
 
           if (!uniqueIndices.has(idx)) {
             sets.push(data.results[idx]);
@@ -68,6 +68,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
         const featuredSetsList = document.createElement("div");
         featuredSetsList.classList.add("featuredSetsList");
+        const loaderSVG = document.getElementById("loader");
+        if (loaderSVG) loaderSVG.remove();
 
         for (let i = 0; i < sets.length; i++) {
           const set = sets[i];
@@ -238,7 +240,7 @@ document.addEventListener("DOMContentLoaded", () => {
         const numSets = 6;
 
         while (uniqueIndices.size < numSets) {
-          const idx = Math.round(Math.random() * data.results.length);
+          const idx = Math.floor(Math.random() * data.results.length);
 
           if (!uniqueIndices.has(idx)) {
             sets.push(data.results[idx]);
@@ -248,6 +250,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
         const wymlSetsList = document.createElement("div");
         wymlSetsList.classList.add("wymlSetsList");
+        const loaderSVG = document.getElementById("loader1");
+        if (loaderSVG) loaderSVG.remove();
 
         for (let i = 0; i < sets.length; i++) {
           const set = sets[i];

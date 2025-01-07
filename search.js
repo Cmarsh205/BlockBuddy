@@ -36,6 +36,9 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     });
 
+  /**
+   * Search results
+   */
   const params = new URLSearchParams(document.location.search);
   const q = params.get("q");
 
@@ -67,9 +70,6 @@ document.addEventListener("DOMContentLoaded", () => {
       });
   }
 
-  /**
-   * Search results
-   */
   function displayResults(results) {
     console.log(results);
     const resultsContainer = document.getElementById("resultsList");
@@ -80,6 +80,8 @@ document.addEventListener("DOMContentLoaded", () => {
       return;
     }
     const resultsListDiv = document.getElementById("resultsList");
+    const loaderSVG = document.getElementById("loader");
+    if (loaderSVG) loaderSVG.remove();
 
     results.forEach((set) => {
       const setDiv = document.createElement("div");
