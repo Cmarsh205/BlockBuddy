@@ -41,6 +41,42 @@ document.addEventListener("DOMContentLoaded", () => {
    */
   const PAGE_SIZE = 50;
 
+  function addTooltipListeners(element) {
+    element.addEventListener("mouseenter", showTooltip);
+    element.addEventListener("mouseleave", hideTooltip);
+  }
+
+  function showTooltip(event) {
+    const trigger = event.currentTarget;
+    const tooltipText = trigger.getAttribute("data-tooltip");
+
+    if (!tooltipText) return;
+
+    const tooltip = document.createElement("div");
+    tooltip.className = "aria-tooltip";
+    tooltip.setAttribute("role", "tooltip");
+    tooltip.setAttribute("id", `tooltip-${Date.now()}`);
+
+    document.body.appendChild(tooltip);
+    trigger.setAttribute("aria-describedby", tooltip.id);
+
+    const rect = trigger.getBoundingClientRect();
+    tooltip.style.left = `${rect.left + window.scrollX}px`;
+    tooltip.style.top = `${rect.bottom + window.scrollY + 5}px`;
+  }
+
+  function hideTooltip(event) {
+    const trigger = event.currentTarget;
+    const tooltipId = trigger.getAttribute("aria-describedby");
+    if (tooltipId) {
+      const tooltip = document.getElementById(tooltipId);
+      if (tooltip) {
+        tooltip.remove();
+      }
+      trigger.removeAttribute("aria-describedby");
+    }
+  }
+
   function getFeaturedSets(page = 1, pageSize = 100) {
     const apiKey = "ebd77297ed794bb129b23c3cd006661e";
     const baseUrl = "https://rebrickable.com";
@@ -129,11 +165,13 @@ document.addEventListener("DOMContentLoaded", () => {
           setHeader.innerText = set.name;
           setPic.src = set.set_img_url;
           setNumber.innerText = set.set_num;
+          setHeader.setAttribute("data-tooltip", set.name);
+          setNumber.setAttribute("data-tooltip", set.set_num);
 
           setDiv.classList.add("setContainer");
-          setHeader.classList.add("setName");
+          setHeader.classList.add("setName", "tooltip-trigger");
           setPic.classList.add("setImg");
-          setNumber.classList.add("setNum");
+          setNumber.classList.add("setNum", "tooltip-trigger");
           wishlistBtn.classList.add("wishlistBtnSP");
           collectionBtn.classList.add("collectionBtnSP");
           btnDiv.classList.add("btnContainer");
@@ -153,6 +191,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
         const featuredSetsDiv = document.getElementById("box-f");
         featuredSetsDiv.appendChild(featuredSetsList);
+
+        addTooltipListeners(setHeader);
+        addTooltipListeners(setNumber);
       });
   }
 
