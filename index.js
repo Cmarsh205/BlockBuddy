@@ -37,7 +37,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
   /**
-   * Featured sets
+   * Tooltips
    */
   const PAGE_SIZE = 50;
 
@@ -56,6 +56,7 @@ document.addEventListener("DOMContentLoaded", () => {
     tooltip.className = "aria-tooltip";
     tooltip.setAttribute("role", "tooltip");
     tooltip.setAttribute("id", `tooltip-${Date.now()}`);
+    tooltip.textContent = tooltipText;
 
     document.body.appendChild(tooltip);
     trigger.setAttribute("aria-describedby", tooltip.id);
@@ -76,7 +77,9 @@ document.addEventListener("DOMContentLoaded", () => {
       trigger.removeAttribute("aria-describedby");
     }
   }
-
+  /**
+   * Featured Sets
+   */
   function getFeaturedSets(page = 1, pageSize = 100) {
     const apiKey = "ebd77297ed794bb129b23c3cd006661e";
     const baseUrl = "https://rebrickable.com";
@@ -163,7 +166,9 @@ document.addEventListener("DOMContentLoaded", () => {
           });
 
           setHeader.innerText = set.name;
-          setPic.src = set.set_img_url;
+          setPic.src =
+            set.set_img_url ||
+            "Media/blockbuddy-high-resolution-logo-transparent (2).png";
           setNumber.innerText = set.set_num;
           setHeader.setAttribute("data-tooltip", set.name);
           setNumber.setAttribute("data-tooltip", set.set_num);
@@ -192,8 +197,9 @@ document.addEventListener("DOMContentLoaded", () => {
         const featuredSetsDiv = document.getElementById("box-f");
         featuredSetsDiv.appendChild(featuredSetsList);
 
-        addTooltipListeners(setHeader);
-        addTooltipListeners(setNumber);
+        document.querySelectorAll(".tooltip-trigger").forEach((element) => {
+          addTooltipListeners(element);
+        });
       });
   }
 
@@ -237,6 +243,16 @@ document.addEventListener("DOMContentLoaded", () => {
   /**
    * What you might like
    */
+  const wymlSetsDiv = document.getElementById("box-w");
+
+  if (!wymlSetsDiv.querySelector(".wymlSetsList")) {
+    const placeHolder = document.createElement("p");
+    placeHolder.id = "placeHolderMessage";
+    placeHolder.innerText =
+      "Nothing here yet! Add some sets to see recommendations.";
+    wymlSetsDiv.appendChild(placeHolder);
+  }
+
   function getWhatYouMightLike() {
     let collectionString = localStorage.getItem("collection");
 
@@ -280,6 +296,16 @@ document.addEventListener("DOMContentLoaded", () => {
         const sets = [];
         const numSets = 6;
 
+        const loaderSVG = document.getElementById("loader1");
+        if (loaderSVG) {
+          loaderSVG.remove(); // Only remove the loader, not the placeholder
+        }
+
+        const placeHolder = document.getElementById("placeHolderMessage");
+        if (placeHolder) {
+          placeHolder.remove(); // Only remove the placeholder when sets are actually loading
+        }
+
         while (uniqueIndices.size < numSets) {
           const idx = Math.floor(Math.random() * data.results.length);
 
@@ -291,8 +317,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
         const wymlSetsList = document.createElement("div");
         wymlSetsList.classList.add("wymlSetsList");
-        const loaderSVG = document.getElementById("loader1");
-        if (loaderSVG) loaderSVG.remove();
 
         for (let i = 0; i < sets.length; i++) {
           const set = sets[i];
@@ -350,13 +374,17 @@ document.addEventListener("DOMContentLoaded", () => {
           });
 
           setHeader.innerText = set.name;
-          setPic.src = set.set_img_url;
+          setPic.src =
+            set.set_img_url ||
+            "Media/blockbuddy-high-resolution-logo-transparent (2).png";
           setNumber.innerText = set.set_num;
+          setHeader.setAttribute("data-tooltip", set.name);
+          setNumber.setAttribute("data-tooltip", set.set_num);
 
           setDiv.classList.add("setContainer");
-          setHeader.classList.add("setName");
+          setHeader.classList.add("setName", "tooltip-trigger");
           setPic.classList.add("setImg");
-          setNumber.classList.add("setNum");
+          setNumber.classList.add("setNum", "tooltip-trigger");
           wishlistBtn.classList.add("wishlistBtnSP");
           collectionBtn.classList.add("collectionBtnSP");
           btnDiv.classList.add("btnContainer");
@@ -376,6 +404,15 @@ document.addEventListener("DOMContentLoaded", () => {
 
         const wymlSetsDiv = document.getElementById("box-w");
         wymlSetsDiv.appendChild(wymlSetsList);
+
+        const placeholder = document.getElementById("placeholderMessage");
+        if (placeholder) {
+          placeholder.remove();
+        }
+
+        document.querySelectorAll(".tooltip-trigger").forEach((element) => {
+          addTooltipListeners(element);
+        });
       });
   }
   getWhatYouMightLike();

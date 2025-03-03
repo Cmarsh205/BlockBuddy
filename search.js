@@ -37,6 +37,47 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
   /**
+   * Tooltips
+   */
+
+  function addTooltipListeners(element) {
+    element.addEventListener("mouseenter", showTooltip);
+    element.addEventListener("mouseleave", hideTooltip);
+  }
+
+  function showTooltip(event) {
+    const trigger = event.currentTarget;
+    const tooltipText = trigger.getAttribute("data-tooltip");
+
+    if (!tooltipText) return;
+
+    const tooltip = document.createElement("div");
+    tooltip.className = "aria-tooltip";
+    tooltip.setAttribute("role", "tooltip");
+    tooltip.setAttribute("id", `tooltip-${Date.now()}`);
+    tooltip.textContent = tooltipText;
+
+    document.body.appendChild(tooltip);
+    trigger.setAttribute("aria-describedby", tooltip.id);
+
+    const rect = trigger.getBoundingClientRect();
+    tooltip.style.left = `${rect.left + window.scrollX}px`;
+    tooltip.style.top = `${rect.bottom + window.scrollY + 5}px`;
+  }
+
+  function hideTooltip(event) {
+    const trigger = event.currentTarget;
+    const tooltipId = trigger.getAttribute("aria-describedby");
+    if (tooltipId) {
+      const tooltip = document.getElementById(tooltipId);
+      if (tooltip) {
+        tooltip.remove();
+      }
+      trigger.removeAttribute("aria-describedby");
+    }
+  }
+
+  /**
    * Search results
    */
   const params = new URLSearchParams(document.location.search);
@@ -138,13 +179,17 @@ document.addEventListener("DOMContentLoaded", () => {
       });
 
       setHeader.innerText = set.name;
-      setPic.src = set.set_img_url;
+      setPic.src =
+        set.set_img_url ||
+        "Media/blockbuddy-high-resolution-logo-transparent (2).png";
       setNumber.innerText = set.set_num;
+      setHeader.setAttribute("data-tooltip", set.name);
+      setNumber.setAttribute("data-tooltip", set.set_num);
 
       setDiv.classList.add("setContainer");
-      setHeader.classList.add("setName");
+      setHeader.classList.add("setName", "tooltip-trigger");
       setPic.classList.add("setImg");
-      setNumber.classList.add("setNum");
+      setNumber.classList.add("setNum", "tooltip-trigger");
       wishlistBtn.classList.add("wishlistBtnSP");
       collectionBtn.classList.add("collectionBtnSP");
       btnDiv.classList.add("btnContainer");
@@ -160,6 +205,9 @@ document.addEventListener("DOMContentLoaded", () => {
       btnDiv.appendChild(wishlistBtn);
       setDiv.appendChild(btnDiv);
       resultsListDiv.appendChild(setDiv);
+    });
+    document.querySelectorAll(".tooltip-trigger").forEach((element) => {
+      addTooltipListeners(element);
     });
   }
 
