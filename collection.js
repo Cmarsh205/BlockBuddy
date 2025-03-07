@@ -93,7 +93,22 @@ document.addEventListener("DOMContentLoaded", () => {
 
   let collection = JSON.parse(collectionString);
 
+  if (collection.length === 0) {
+    const placeholder = document.createElement("p");
+    placeholder.id = "emptyMessage";
+    placeholder.innerText =
+      "Your collection is currently empty. Start adding some sets!";
+    placeholder.classList.add("placeHolderMessage");
+    collectionListDiv.appendChild(placeholder);
+  }
+
   for (const set of collection) {
+
+    const emptyMessage = document.getElementById("emptyMessage");
+    if (emptyMessage) {
+      emptyMessage.remove();
+    }
+    
     const setDiv = document.createElement("div");
     const setHeader = document.createElement("h3");
     const setPic = document.createElement("img");

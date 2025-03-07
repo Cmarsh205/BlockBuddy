@@ -71,6 +71,8 @@ button:hover {
   border-radius: 15px;
   height: 98%;
   margin: 10px;
+  padding-left: 1%;
+  padding-right: 1%;
 }
 
 .box-p {
@@ -108,6 +110,8 @@ button:hover {
   position: relative;
   left: 190px;
   padding-bottom: 3%;
+  padding-left: 1%;
+  padding-right: 1%;
 }
 
 h2 {
@@ -327,19 +331,21 @@ footer {
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  margin: 10px;
-  width: 12%;
+  margin: 0.3%;
   border: 1px solid #868686;
   border-radius: 15px;
   padding: 1%;
   background-image: url('Media/brick_480.png');
+  flex: 1 1 calc(16.66% - 20px); 
+  min-width: 12%; 
+  max-width: 16.66%; 
 }
 
 .setImg {
-  width: 90%;
+  width: 80%;
   height: 150px;
   border-radius: 5%;
-  padding: 2%;
+  border: 1px solid black;
 }
 
 .setName { 
@@ -420,19 +426,13 @@ footer {
   justify-content: space-around; 
 }
 
-.collectionList {
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: row;
-  justify-content: space-around;
-  padding: 2%;
-}
-
+.collectionList,
 .wishlistList {
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
-  justify-content: space-around;
+  justify-content: flex-start; 
+  gap: 20px; 
   padding: 2%;
 }
 
@@ -514,6 +514,16 @@ footer {
   z-index: 1000;
   pointer-events: none;
   opacity: 0.9;
+}
+
+.placeHolderMessage {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  font-size: 24px;
+  color: #000000;
 }
 
 @keyframes fadeIn {

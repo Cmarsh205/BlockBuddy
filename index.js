@@ -248,6 +248,7 @@ document.addEventListener("DOMContentLoaded", () => {
   if (!wymlSetsDiv.querySelector(".wymlSetsList")) {
     const placeHolder = document.createElement("p");
     placeHolder.id = "placeHolderMessage";
+    placeHolder.classList.add("placeHolderMessage");
     placeHolder.innerText =
       "Nothing here yet! Add some sets to see recommendations.";
     wymlSetsDiv.appendChild(placeHolder);
@@ -298,12 +299,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         const loaderSVG = document.getElementById("loader1");
         if (loaderSVG) {
-          loaderSVG.remove(); // Only remove the loader, not the placeholder
-        }
-
-        const placeHolder = document.getElementById("placeHolderMessage");
-        if (placeHolder) {
-          placeHolder.remove(); // Only remove the placeholder when sets are actually loading
+          loaderSVG.remove(); 
         }
 
         while (uniqueIndices.size < numSets) {
@@ -405,9 +401,11 @@ document.addEventListener("DOMContentLoaded", () => {
         const wymlSetsDiv = document.getElementById("box-w");
         wymlSetsDiv.appendChild(wymlSetsList);
 
-        const placeholder = document.getElementById("placeholderMessage");
-        if (placeholder) {
-          placeholder.remove();
+        if (sets.length > 0) {
+          const placeHolder = document.getElementById("placeHolderMessage");
+          if (placeHolder) {
+            placeHolder.remove();
+          }
         }
 
         document.querySelectorAll(".tooltip-trigger").forEach((element) => {

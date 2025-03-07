@@ -93,7 +93,21 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const wishlist = JSON.parse(wishlistString);
 
+  if (wishlist.length === 0) {
+    const placeholder = document.createElement("p");
+    placeholder.id = "emptyMessage";
+    placeholder.innerText =
+      "Your wishlist is currently empty. Start adding some sets!";
+    placeholder.classList.add("placeHolderMessage");
+    wishlistListDiv.appendChild(placeholder);
+  }
+
   for (const set of wishlist) {
+    const emptyMessage = document.getElementById("emptyMessage");
+    if (emptyMessage) {
+      emptyMessage.remove();
+    }
+
     const setDiv = document.createElement("div");
     const setHeader = document.createElement("h3");
     const setPic = document.createElement("img");
