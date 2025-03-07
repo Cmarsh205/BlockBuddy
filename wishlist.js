@@ -106,6 +106,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const emptyMessage = document.getElementById("emptyMessage");
     if (emptyMessage) {
       emptyMessage.remove();
+      emptyMessage = null;
     }
 
     const setDiv = document.createElement("div");
@@ -147,6 +148,15 @@ document.addEventListener("DOMContentLoaded", () => {
       }
 
       setDiv.remove();
+
+      if (_wishlist.length === 0) {
+        const emptyMessage = document.createElement("p");
+        emptyMessage.id = "emptyMessage";
+        emptyMessage.innerText =
+          "Your wishlist is currently empty. Start adding some sets!";
+        emptyMessage.classList.add("placeHolderMessage");
+        wishlistListDiv.appendChild(emptyMessage);
+      }
     });
 
     setHeader.innerText = set.name;

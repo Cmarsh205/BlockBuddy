@@ -406,11 +406,11 @@ document.addEventListener("DOMContentLoaded", () => {
           if (placeHolder) {
             placeHolder.remove();
           }
-        }
 
         document.querySelectorAll(".tooltip-trigger").forEach((element) => {
           addTooltipListeners(element);
         });
+      }
       });
   }
   getWhatYouMightLike();

@@ -103,12 +103,12 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   for (const set of collection) {
-
     const emptyMessage = document.getElementById("emptyMessage");
     if (emptyMessage) {
       emptyMessage.remove();
+      emptyMessage = null;
     }
-    
+
     const setDiv = document.createElement("div");
     const setHeader = document.createElement("h3");
     const setPic = document.createElement("img");
@@ -148,6 +148,15 @@ document.addEventListener("DOMContentLoaded", () => {
       }
 
       setDiv.remove();
+
+      if (_collection.length === 0) {
+        const emptyMessage = document.createElement("p");
+        emptyMessage.id = "emptyMessage";
+        emptyMessage.innerText =
+          "Your collection is currently empty. Start adding some sets!";
+        emptyMessage.classList.add("placeHolderMessage");
+        collectionListDiv.appendChild(emptyMessage);
+      }
     });
 
     setHeader.innerText = set.name;
