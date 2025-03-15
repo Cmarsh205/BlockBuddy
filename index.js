@@ -94,7 +94,7 @@ document.addEventListener("DOMContentLoaded", () => {
       .then((data) => {
         const uniqueIndices = new Set();
         const sets = [];
-        const numSets = 6;
+        const numSets = 5;
 
         while (uniqueIndices.size < numSets) {
           const idx = Math.floor(Math.random() * PAGE_SIZE);
@@ -295,7 +295,7 @@ document.addEventListener("DOMContentLoaded", () => {
       .then((data) => {
         const uniqueIndices = new Set();
         const sets = [];
-        const numSets = 6;
+        const numSets = 5;
 
         const loaderSVG = document.getElementById("loader1");
         if (loaderSVG) {
