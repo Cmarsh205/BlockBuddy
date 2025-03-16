@@ -166,6 +166,15 @@ h1 {
   border: 1px solid #868686;
 }
 
+.search-info {
+  display: flex;
+  justify-content: center;
+  align-items: center; 
+  padding: 2%;
+  text-align: center;
+  font-size: 15px;
+}
+
 .search-container {
   display: flex;
   justify-content: center;
@@ -373,7 +382,7 @@ footer {
   overflow: hidden;
   width: 80%;
   text-align: center;
-  font-size: 24px;
+  font-size: 20px;
 }
 
 .setNum {
