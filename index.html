@@ -13,10 +13,14 @@
     <script src="index.js"></script>
   </head>
   <body> 
-    <div class="flexbox">
-      <div class="navbar-container">
+    <div class="homeContent">
         <nav class="navbar">
           <img class="navbar-title" src="Media/blockbuddy-high-resolution-logo-transparent (2).png" id="bbLogo"></img>
+          <button class="hamburger" id="hamburger">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+          </button>
           <ul>
             <li>
               <span class="material-symbols-outlined">home</span>
@@ -43,14 +47,12 @@
           </div>
           </form>
         </nav>
-      </div>
-      <div class="homeContent">
         <div class="box-f" id="box-f">
           <h2 class="featHeader">Featured Sets</h2>
           <img class = "loader" id = "loader" src="Media/fade-stagger-squares.svg" alt="loading">
         </div>
         <div class="box-p">
-          <h2>Popular Themes</h2>
+          <h2 class="ptHeader">Popular Themes</h2>
             <div class="image-container1" id="imageContainer1">
               <img class="feat-icons" src="Media/Star_Wars-logo-97DD55947B-seeklogo.com.png" alt="Star Wars" />
             </div>
@@ -70,7 +72,6 @@
               <img class="feat-icons" src="Media/Marvel_Logo.svg.png" alt="Marvel" />
             </div>
           </div>
-        </div>
         <div class="box-i">
           <h2>Inspiration</h2>
             <p>Check out these cool videos!</p>
@@ -88,7 +89,7 @@
           <h2>What You Might Like</h2>
           <img class = "loader1" id = "loader1" src="Media/fade-stagger-squares.svg" alt="loading">
         </div>
-      </div>
+    </div>
       <div id="customAlert" class="custom-alert hidden">
         <div class="custom-alert-content">
           <p id="alertMessage">Message</p>
