@@ -523,7 +523,6 @@ footer {
 }
 
 @media (max-width: 768px) {
-  /* Navbar changes for mobile */
   .navbar {
       width: 100%;
       height: auto;
@@ -531,7 +530,6 @@ footer {
       top: 0;
       left: 0;
       display: flex;
-      justify-content: space-between;
       align-items: center;
       padding: 10px;
       background-color: #ffcc00;
@@ -539,7 +537,7 @@ footer {
   }
 
   .navbar ul {
-      display: none; /* Hide menu initially */
+      display: none; 
       flex-direction: column;
       width: 100%;
       text-align: center;
@@ -553,20 +551,6 @@ footer {
       display: flex;
   }
 
-  .navbar-title {
-      font-size: 18px;
-  }
-
-  /* Hamburger menu button */
-  #menu-btn {
-      display: block;
-      font-size: 24px;
-      background: none;
-      border: none;
-      cursor: pointer;
-  }
-
-  /* Adjust content layout */
   .content {
       flex-direction: column;
       padding-left: 0;
@@ -577,31 +561,42 @@ footer {
       flex-direction: column;
       padding-left: 0;
       width: 100%;
+      padding-top: 19%;
   }
 
-  /* Adjust boxes for mobile */
+
   .box-f, .box-p, .box-i, .box-w {
       width: 90%;
       height: auto;
       margin: 10px auto;
   }
 
-  /* Responsive search bar */
   .search-box {
       width: 100%;
   }
 
-  /* Footer adjustments */
-  footer {
-      position: relative;
-      padding-bottom: 5%;
+  .search-container {
+      text-align: left;
+      margin: 0%;
+      padding-left: 5%;
   }
 
-  /* Grid layout adjustments */
+  footer {
+      position: relative;
+      padding-bottom: 1%;
+  }
+
   .box-p {
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
+  }
+
+  .box-w {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    flex-direction: column;
   }
 
   .setContainer {
@@ -615,10 +610,20 @@ footer {
       justify-content: center;
   }
 
-  /* Adjust button containers */
+  .wymlSetsList {
+      flex-wrap: wrap;
+      overflow-x: unset;
+      justify-content: center;
+  }
+
   .btnContainer {
-      flex-direction: column;
+      flex-direction: row;
       align-items: center;
-      width: 100%;
+      width: 75%;
+  }
+
+  .navbar-title {
+      padding: 1%;
+      width: 13%;
   }
 }
