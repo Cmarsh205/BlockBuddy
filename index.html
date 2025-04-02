@@ -16,7 +16,7 @@
     <div class="homeContent">
         <nav class="navbar">
           <img class="navbar-title" src="Media/blockbuddy-high-resolution-logo-transparent (2).png" id="bbLogo"></img>
-          <ul>
+          <ul class="menu-items" id="menu-items">
             <li>
               <span class="material-symbols-outlined">home</span>
               <button id="homeBtn">Home</button>
@@ -29,10 +29,6 @@
               <span class="material-symbols-outlined"> favorite </span>
               <button id="wishlistBtn">Wishlist</button>
             </li>
-            <li class="logout">
-              <span class="material-symbols-outlined"> logout </span>
-              <button id="logoutBtn">Logout</button>
-            </li>
             <p class="search-info">Search for a specific set/piece by name or number e.g 10188-1 </p>
           </ul>
           <form id="searchForm" class="search-container" action="#" method="get">
@@ -41,6 +37,7 @@
             <button type="submit">🔍</button>
           </div>
           </form>
+          <button class="menu-button" id="menu-button">☰</button>
         </nav>
         <div class="box-f" id="box-f">
           <h2 class="featHeader">Featured Sets</h2>

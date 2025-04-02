@@ -54,12 +54,6 @@ button:hover {
   margin-right: 10px; 
 }
 
-.logout {
-  bottom: 0;
-  position: fixed;
-  margin-bottom: 5px;
-}
-
 .github-icon {
   color: #333; 
   transition: color 0.2s ease-in-out, transform 0.2s ease-in-out;
@@ -155,7 +149,7 @@ h1 {
   padding-top: 0.5%; 
 }
 
-.collectionContent {
+.collectionContent, .wishlistContent, .searchContent {
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
@@ -223,7 +217,7 @@ footer {
   width: 100%;
   height: 0.25%;
   padding-bottom: 2%;
-  z-index: 0;
+  z-index: 1000;
 }
 
 .footer-container {
@@ -242,8 +236,8 @@ footer {
   display: flex;
   justify-content: center; 
   align-items: center;
-  padding-top: 2.3%;
-  padding-bottom: 6%;
+  padding-top: 4%;
+  padding-bottom: 4.3%;
 }
 
 .feat-icons:hover {
@@ -282,12 +276,12 @@ footer {
   display: flex;
   flex-wrap: wrap;
   justify-content: flex-start;
-  gap: 0.5%;
   padding-left: 1%;
   padding-top: 1%;
   padding-bottom: 1%;
+  margin-right: 2%;
   margin-left: 8%;
-  margin-right: 1%;
+  gap: 2.5%;
 }
 
 .your-wishlist {
@@ -295,12 +289,17 @@ footer {
   border: 1px solid #868686;
   margin: 10px;
   border-radius: 15px;
-  width: 87%;
+  width: 100%;
   height: 100%;
   display: flex;
   flex-wrap: wrap;
-  padding: 2%;
-  gap: 10px;
+  justify-content: flex-start;
+  padding-left: 1%;
+  padding-top: 1%;
+  padding-bottom: 1%;
+  margin-right: 2%;
+  margin-left: 8%;
+  gap: 2.5%;
 }
 
 .your-results {
@@ -308,12 +307,17 @@ footer {
   border: 1px solid #868686;
   margin: 10px;
   border-radius: 15px;
-  width: 87%;
+  width: 100%;
   height: 100%;
   display: flex;
   flex-wrap: wrap;
-  padding: 2%;
-  gap: 10px;
+  justify-content: flex-start;
+  padding-left: 1%;
+  padding-top: 1%;
+  padding-bottom: 1%;
+  margin-right: 2%;
+  margin-left: 8%;
+  gap: 2.5%;
 }
 
 .setContainer {
@@ -511,6 +515,10 @@ footer {
   color: #000000;
 }
 
+.menu-button {
+  display: none;
+}
+
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -524,106 +532,156 @@ footer {
 
 @media (max-width: 768px) {
   .navbar {
-      width: 100%;
-      height: auto;
-      position: fixed;
-      top: 0;
-      left: 0;
-      display: flex;
-      align-items: center;
-      padding: 10px;
-      background-color: #ffcc00;
-      z-index: 1000;
-  }
-
-  .navbar ul {
-      display: none; 
-      flex-direction: column;
-      width: 100%;
-      text-align: center;
-      background-color: #ffcc00;
-      position: absolute;
-      top: 100%;
-      left: 0;
-  }
-
-  .navbar ul.active {
-      display: flex;
-  }
-
-  .content {
-      flex-direction: column;
-      padding-left: 0;
-      width: 100%;
-  }
-
-  .homeContent {
-      flex-direction: column;
-      padding-left: 0;
-      width: 100%;
-      padding-top: 19%;
-  }
-
-
-  .box-f, .box-p, .box-i, .box-w {
-      width: 90%;
-      height: auto;
-      margin: 10px auto;
-  }
-
-  .search-box {
-      width: 100%;
-  }
-
-  .search-container {
-      text-align: left;
-      margin: 0%;
-      padding-left: 5%;
-  }
-
-  footer {
-      position: relative;
-      padding-bottom: 1%;
-  }
-
-  .box-p {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-  }
-
-  .box-w {
+    width: 100%;
+    height: auto;
+    position: fixed;
+    top: 0;
+    left: 0;
     display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    flex-direction: column;
-  }
+    align-items: center;
+    padding: 10px;
+    background-color: #ffcc00;
+    z-index: 10;
+}
 
-  .setContainer {
-      flex: 1 1 45%;
-      max-width: 45%;
-  }
+.menu-button {
+  display: block;
+  background: none;
+  border: none;
+  font-size: 25px;
+  cursor: pointer;
+  padding: 10px;
+}
 
-  .featuredSetsList {
-      flex-wrap: wrap;
-      overflow-x: unset;
-      justify-content: center;
-  }
+.menu-items {
+  display: none; 
+  flex-direction: column;
+  background-color: #ffcc00; 
+  width: 200px; 
+  position: fixed;
+  top: 9.05%;
+  right: 3%;  
+  border-radius: 8px; 
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2); 
+  padding: 10px 0;
+  z-index: 9999;
+}
 
-  .wymlSetsList {
-      flex-wrap: wrap;
-      overflow-x: unset;
-      justify-content: center;
-  }
+.menu-items.active {
+  display: flex;  
+  flex-direction: column;
+}
 
-  .btnContainer {
-      flex-direction: row;
-      align-items: center;
-      width: 75%;
-  }
+.menu-items li {
+  padding: 10px;
+  text-align: left;
+  list-style: none;
+}
 
-  .navbar-title {
-      padding: 1%;
-      width: 13%;
-  }
+.menu-items li a {
+  text-decoration: none;
+  color: black;
+  font-size: 16px;
+  display: block;
+  padding: 10px;
+}
+
+.menu-items li:hover {
+  background-color: #ffd633; 
+}
+
+.search-info {
+  display: none;
+}
+
+.content {
+  flex-direction: column;
+  padding-left: 0;
+  width: 100%; 
+}
+
+.homeContent {
+  flex-direction: column;
+  padding-left: 0;
+  width: 100%;
+  padding-top: 19%;
+}
+
+.collectionContent, .wishlistContent, .searchContent {
+  padding-top: 20%;
+}
+
+.your-collection, .your-wishlist, .your-results {
+  margin-left: 2%;
+  gap: 1%;
+  padding: 2%;
+  margin-bottom: 14%;
+}
+
+.box-f, .box-p, .box-i, .box-w {
+  width: 90%;
+  height: auto;
+  margin: 10px auto;
+}
+
+.search-box {
+  width: 100%;
+}
+
+.search-container {
+  text-align: left;
+  margin: 0%;
+  padding-left: 5%;
+  padding-right: 5%;
+}
+
+footer {
+  position: fixed;
+  padding-bottom: 1%;
+  bottom: 0;
+  left: 0;
+  height: 5%;
+}
+
+
+.box-p {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.box-w {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.setContainer {
+  flex: 1 1 45%;
+  max-width: 45%;
+}
+
+.featuredSetsList {
+  flex-wrap: wrap;
+  overflow-x: unset;
+  justify-content: center;
+}
+
+.wymlSetsList {
+  flex-wrap: wrap;
+  overflow-x: unset;
+  justify-content: center;
+}
+
+.btnContainer {
+  flex-direction: row;
+  align-items: center;
+  width: 75%;
+}
+
+.navbar-title {
+  padding: 1%;
+  width: 13%;
+}
 }

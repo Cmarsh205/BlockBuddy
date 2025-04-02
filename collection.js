@@ -184,4 +184,26 @@ document.addEventListener("DOMContentLoaded", () => {
   document.querySelectorAll(".tooltip-trigger").forEach((element) => {
     addTooltipListeners(element);
   });
+
+  /**
+   * Mobile Menu
+   */
+
+  var menuButton = document.getElementById("menu-button");
+  var menuItems = document.getElementById("menu-items");
+
+  menuButton.addEventListener("click", function () {
+    menuItems.classList.toggle("active");
+  });
+
+  document.addEventListener("click", function (event) {
+    if (window.innerWidth <= 768) {
+      if (
+        !menuButton.contains(event.target) &&
+        !menuItems.contains(event.target)
+      ) {
+        menuItems.classList.remove("active");
+      }
+    }
+  });
 });
