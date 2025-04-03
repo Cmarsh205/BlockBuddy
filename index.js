@@ -131,6 +131,15 @@ document.addEventListener("DOMContentLoaded", () => {
           const wIcon = document.createElement("span");
           wIcon.classList.add("material-symbols-outlined");
           wIcon.textContent = "favorite";
+
+          let wishlistValue = localStorage.getItem("wishlist");
+          let wishlist = wishlistValue ? JSON.parse(wishlistValue) : [];
+          const isInWishlist = wishlist.some(
+            (item) => item.set_num === set.set_num
+          );
+
+          wIcon.textContent = isInWishlist ? "favorite" : "favorite_border";
+          wIcon.style.color = isInWishlist ? "red" : "black";
           const btnDiv = document.createElement("div");
 
           collectionBtn.addEventListener("click", () => {
@@ -151,18 +160,31 @@ document.addEventListener("DOMContentLoaded", () => {
 
           wishlistBtn.addEventListener("click", () => {
             let wishlistValue = localStorage.getItem("wishlist");
+            let wishlist = wishlistValue ? JSON.parse(wishlistValue) : [];
 
-            if (wishlistValue === null) {
-              localStorage.setItem("wishlist", "[]");
-              wishlistValue = "[]";
+            const exists = wishlist.some(
+              (item) => item.set_num === set.set_num
+            );
+
+            if (!exists) {
+              wishlist.push(set);
+              localStorage.setItem("wishlist", JSON.stringify(wishlist));
+
+              wIcon.textContent = "favorite";
+              wIcon.style.color = "red";
+
+              showCustomAlert("Added to Wishlist!");
+            } else {
+              wishlist = wishlist.filter(
+                (item) => item.set_num !== set.set_num
+              );
+              localStorage.setItem("wishlist", JSON.stringify(wishlist));
+
+              wIcon.textContent = "favorite_border";
+              wIcon.style.color = "black";
+
+              showCustomAlert("Removed from Wishlist!");
             }
-
-            const wishlist = JSON.parse(wishlistValue);
-
-            wishlist.push(set);
-            localStorage.setItem("wishlist", JSON.stringify(wishlist));
-
-            showCustomAlert("Added to Wishlist!");
           });
 
           setHeader.innerText = set.name;
@@ -335,6 +357,15 @@ document.addEventListener("DOMContentLoaded", () => {
           const wIcon = document.createElement("span");
           wIcon.classList.add("material-symbols-outlined");
           wIcon.textContent = "favorite";
+
+          let wishlistValue = localStorage.getItem("wishlist");
+          let wishlist = wishlistValue ? JSON.parse(wishlistValue) : [];
+          const isInWishlist = wishlist.some(
+            (item) => item.set_num === set.set_num
+          );
+
+          wIcon.textContent = isInWishlist ? "favorite" : "favorite_border";
+          wIcon.style.color = isInWishlist ? "red" : "black";
           const btnDiv = document.createElement("div");
 
           collectionBtn.addEventListener("click", () => {
@@ -355,18 +386,31 @@ document.addEventListener("DOMContentLoaded", () => {
 
           wishlistBtn.addEventListener("click", () => {
             let wishlistValue = localStorage.getItem("wishlist");
+            let wishlist = wishlistValue ? JSON.parse(wishlistValue) : [];
 
-            if (wishlistValue === null) {
-              localStorage.setItem("wishlist", "[]");
-              wishlistValue = "[]";
+            const exists = wishlist.some(
+              (item) => item.set_num === set.set_num
+            );
+
+            if (!exists) {
+              wishlist.push(set);
+              localStorage.setItem("wishlist", JSON.stringify(wishlist));
+
+              wIcon.textContent = "favorite";
+              wIcon.style.color = "red";
+
+              showCustomAlert("Added to Wishlist!");
+            } else {
+              wishlist = wishlist.filter(
+                (item) => item.set_num !== set.set_num
+              );
+              localStorage.setItem("wishlist", JSON.stringify(wishlist));
+
+              wIcon.textContent = "favorite_border";
+              wIcon.style.color = "black";
+
+              showCustomAlert("Removed from Wishlist!");
             }
-
-            const wishlist = JSON.parse(wishlistValue);
-
-            wishlist.push(set);
-            localStorage.setItem("wishlist", JSON.stringify(wishlist));
-
-            showCustomAlert("Added to Wishlist!");
           });
 
           setHeader.innerText = set.name;
